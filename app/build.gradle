@@ -30,6 +30,23 @@ android {
 
 dependencies {
 
+    //Jetpack相关
+    def lifecycle_version = "2.2.0"
+    // ViewModel
+    implementation "androidx.lifecycle:lifecycle-viewmodel:$lifecycle_version"
+    // LiveData
+    implementation "androidx.lifecycle:lifecycle-livedata:$lifecycle_version"
+    // 只有Lifecycles (不带 ViewModel or LiveData)
+    implementation "androidx.lifecycle:lifecycle-runtime:$lifecycle_version"
+    // Saved state module for ViewModel
+    implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycle_version"
+    // lifecycle注解处理器
+    annotationProcessor "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
+//    // 替换 - 如果使用Java8,就用这个替换上面的lifecycle-compiler
+//    implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"
+    // 可选 - ProcessLifecycleOwner给整个 app进程 提供一个lifecycle
+    implementation "androidx.lifecycle:lifecycle-process:$lifecycle_version"
+
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'com.google.android.material:material:1.2.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
